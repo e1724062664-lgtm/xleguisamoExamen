@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="xleguisamoExamen.Views.Login"
+             Title="Login">
+   
+
+        <ScrollView>
+            <StackLayout Padding="20" Spacing="10">
+                <!-- Logo Local -->
+                <Image Source="logo_gym.png" 
+                   HeightRequest="120" 
+                   HorizontalOptions="Center" />
+
+                <!-- Título Morado, T26, Centrado y Negrita (Uso de Estilo Global) -->
+                <Label Text="GIMNASIO FIT" 
+                   Style="{StaticResource GlobalTitleStyle}"
+                   TextColor="Purple" 
+                   FontSize="26" />
+
+                <!-- Grid 3 Filas x 2 Columnas -->
+                <Grid RowDefinitions="Auto, Auto, Auto" 
+                  ColumnDefinitions="Auto, *" 
+                  RowSpacing="10" 
+                  ColumnSpacing="10">
+
+                    <!-- Fila 0: Usuario -->
+                    <Label Text="Usuario:" VerticalOptions="Center" Grid.Row="0" Grid.Column="0" />
+                    <Entry x:Name="txtUsuario" Placeholder="Ingrese usuario" Grid.Row="0" Grid.Column="1" />
+
+                    <!-- Fila 1: Contraseña -->
+                    <Label Text="Contraseña:" VerticalOptions="Center" Grid.Row="1" Grid.Column="0" />
+                    <Entry x:Name="txtContrasena" IsPassword="True" Placeholder="Ingrese contraseña" Grid.Row="1" Grid.Column="1" />
+
+                    <!-- Fila 2: Botón Iniciar Sesión -->
+                    <Button Text="Iniciar sesión" 
+                        Clicked="OnLoginClicked"
+                        Style="{StaticResource GlobalButtonStyle}"
+                        Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" />
+                </Grid>
+
+                <!-- Botón Acerca de -->
+            <Button Text="Acerca de"
+                   Clicked="OnAcercaDeClicked"
+                   Style="{StaticResource GlobalButtonStyle}" />
+        </StackLayout>
+        </ScrollView>
+
+
+  
+</ContentPage>

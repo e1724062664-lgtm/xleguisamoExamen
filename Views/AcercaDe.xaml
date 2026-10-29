@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="xleguisamoExamen.Views.AcercaDe"
+             Title="AcercaDe">
+    <StackLayout Padding="20" Spacing="15" HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="Información del Estudiante" 
+               Style="{StaticResource GlobalTitleStyle}"
+               FontSize="22" 
+               TextColor="DarkSlateGray" />
+
+        <Image Source="foto_estudiante.png" 
+               HeightRequest="150" 
+               WidthRequest="150" 
+               Aspect="AspectFill" 
+               HorizontalOptions="Center" />
+
+        <Label Text="Nombre: [Tu Nombre y Apellido]" FontSize="16" HorizontalOptions="Center" />
+        <Label Text="Carrera: Ingeniería en Sistemas / Desarrollo de Software" FontSize="16" HorizontalOptions="Center" />
+        <Label Text="Paralelo: A / B" FontSize="16" HorizontalOptions="Center" />
+    </StackLayout>
+
+</ContentPage>

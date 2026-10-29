@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="xleguisamoExamen.Views.Registro"
+             Title="Registro">
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15">
+            <!-- Usuario Conectado -->
+            <Label x:Name="lblUsuarioConectado" 
+                   FontSize="14" 
+                   FontAttributes="Bold" 
+                   TextColor="Gray" />
+
+            <!-- Título Azul, T22, Centrado -->
+            <Label Text="REGISTRO DE SOCIOS" 
+                   Style="{StaticResource GlobalTitleStyle}"
+                   TextColor="Blue" 
+                   FontSize="22" />
+
+            <!-- Grid 1: 2 Filas x 3 Columnas (Datos Personales) -->
+            <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, *, *" ColumnSpacing="10" RowSpacing="5">
+                <Label Text="Nombre" Grid.Row="0" Grid.Column="0" FontAttributes="Bold" />
+                <Label Text="Apellido" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" />
+                <Label Text="Edad" Grid.Row="0" Grid.Column="2" FontAttributes="Bold" />
+
+                <Entry x:Name="txtNombre" Placeholder="Nombre" Grid.Row="1" Grid.Column="0" />
+                <Entry x:Name="txtApellido" Placeholder="Apellido" Grid.Row="1" Grid.Column="1" />
+                <Entry x:Name="txtEdad" Placeholder="≥ 16" Keyboard="Numeric" Grid.Row="1" Grid.Column="2" />
+            </Grid>
+
+            <!-- Grid 2: 5 Filas x 2 Columnas (Membresía) -->
+            <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto" ColumnDefinitions="Auto, *" RowSpacing="10" ColumnSpacing="10">
+                <!-- Fila 0: Fecha de Inicio -->
+                <Label Text="Fecha de inicio:" VerticalOptions="Center" Grid.Row="0" Grid.Column="0" />
+                <DatePicker x:Name="dpFechaInicio" Grid.Row="0" Grid.Column="1" />
+
+                <!-- Fila 1: Plan -->
+                <Label Text="Plan:" VerticalOptions="Center" Grid.Row="1" Grid.Column="0" />
+                <Picker x:Name="pkPlan" Grid.Row="1" Grid.Column="1">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Musculación</x:String>
+                            <x:String>Cardio</x:String>
+                            <x:String>Crossfit</x:String>
+                            <x:String>Full</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <!-- Fila 2: Casillero -->
+                <Label Text="Casillero (+$10/cuota):" VerticalOptions="Center" Grid.Row="2" Grid.Column="0" />
+                <Switch x:Name="swCasillero" Grid.Row="2" Grid.Column="1" HorizontalOptions="Start" />
+
+                <!-- Fila 3: Monto Inicial -->
+                <Label Text="Monto Inicial ($120-$600):" VerticalOptions="Center" Grid.Row="3" Grid.Column="0" />
+                <Entry x:Name="txtMontoInicial" Keyboard="Numeric" Placeholder="120 - 600" Grid.Row="3" Grid.Column="1" />
+
+                <!-- Fila 4: Botón Calcular y Campo Calculado -->
+                <Button Text="Calcular Pago mensual" Clicked="OnCalcularClicked" Style="{StaticResource GlobalButtonStyle}" Grid.Row="4" Grid.Column="0" />
+                <Entry x:Name="txtPagoMensual" IsReadOnly="True" Placeholder="0.00" Grid.Row="4" Grid.Column="1" />
+            </Grid>
+
+            <!-- Fuera del GRID: Botón Ver Resumen -->
+            <Button Text="Ver Resumen" 
+                    Clicked="OnVerResumenClicked" 
+                    BackgroundColor="Green" 
+                    TextColor="White" 
+                    FontAttributes="Bold" 
+                    Margin="0,15,0,0" />
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
