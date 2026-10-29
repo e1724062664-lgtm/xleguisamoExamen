@@ -12,7 +12,7 @@
 
             <!--Estilos globales-->
             <Style x:Key="GlobalButtonStyle" TargetType="Button">
-                <Setter Property="BackgroundColor" Value="Brown"/>
+                <Setter Property="BackgroundColor" Value="GreenYellow"/>
                 <Setter Property="TextColor" Value="White"/>
             </Style>
 
